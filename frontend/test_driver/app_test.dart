@@ -16,11 +16,6 @@ void main() {
       }
     });
 
-    Timer timeout;
-    setUp(() {
-      timeout = new Timer(new Duration(seconds: 15), () => fail("timed out"));
-    });
-
     test('First dateItem should be 12 Mar 2020', () async {
       final dateItem0 = find.byValueKey('dateItem0');
       expect(await driver.getText(dateItem0), "13 mar.");
